@@ -272,19 +272,21 @@ function initTestimonials() {
 // ========================================
 function initGallery() {
   const galleryImages = [
-    { src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%232a2a2d"/%3E%3Ctext x="200" y="145" text-anchor="middle" fill="%236b7280" font-family="Poppins,sans-serif" font-size="20"%3EGallery 1%3C/text%3E%3Ctext x="200" y="170" text-anchor="middle" fill="%239CA3AF" font-family="Poppins,sans-serif" font-size="14"%3EHome Cleaning%3C/text%3E%3C/svg%3E', alt: 'Professional home cleaning service in Nairobi' },
-    { src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%232a2a2d"/%3E%3Ctext x="200" y="145" text-anchor="middle" fill="%236b7280" font-family="Poppins,sans-serif" font-size="20"%3EGallery 2%3C/text%3E%3Ctext x="200" y="170" text-anchor="middle" fill="%239CA3AF" font-family="Poppins,sans-serif" font-size="14"%3EOffice Cleaning%3C/text%3E%3C/svg%3E', alt: 'Office cleaning and sanitization' },
-    { src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%232a2a2d"/%3E%3Ctext x="200" y="145" text-anchor="middle" fill="%236b7280" font-family="Poppins,sans-serif" font-size="20"%3EGallery 3%3C/text%3E%3Ctext x="200" y="170" text-anchor="middle" fill="%239CA3AF" font-family="Poppins,sans-serif" font-size="14"%3ESofa Cleaning%3C/text%3E%3C/svg%3E', alt: 'Sofa deep cleaning before and after' },
-    { src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%232a2a2d"/%3E%3Ctext x="200" y="145" text-anchor="middle" fill="%236b7280" font-family="Poppins,sans-serif" font-size="20"%3EGallery 4%3C/text%3E%3Ctext x="200" y="170" text-anchor="middle" fill="%239CA3AF" font-family="Poppins,sans-serif" font-size="14"%3EMattress Cleaning%3C/text%3E%3C/svg%3E', alt: 'Mattress cleaning service' },
-    { src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%232a2a2d"/%3E%3Ctext x="200" y="145" text-anchor="middle" fill="%236b7280" font-family="Poppins,sans-serif" font-size="20"%3EGallery 5%3C/text%3E%3Ctext x="200" y="170" text-anchor="middle" fill="%239CA3AF" font-family="Poppins,sans-serif" font-size="14"%3ELaundry%3C/text%3E%3C/svg%3E', alt: 'Laundry and garment care' },
-    { src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%232a2a2d"/%3E%3Ctext x="200" y="145" text-anchor="middle" fill="%236b7280" font-family="Poppins,sans-serif" font-size="20"%3EGallery 6%3C/text%3E%3Ctext x="200" y="170" text-anchor="middle" fill="%239CA3AF" font-family="Poppins,sans-serif" font-size="14"%3EPost-Construction%3C/text%3E%3C/svg%3E', alt: 'Post-construction cleaning' }
+    { src: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80', alt: 'Professional home cleaning service' },
+    { src: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=80', alt: 'Office cleaning and sanitization' },
+    { src: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&q=80', alt: 'Sofa deep cleaning service' },
+    { src: 'https://images.unsplash.com/photo-1583947215252-5a7c5a28c0e8?w=600&q=80', alt: 'Mattress cleaning service' },
+    { src: 'https://images.unsplash.com/photo-1584735935682-2f2b69d8f5f1?w=600&q=80', alt: 'Laundry and garment care' },
+    { src: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80', alt: 'Post-construction cleaning' },
+    { src: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80', alt: 'Window cleaning service' },
+    { src: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&q=80', alt: 'Deep cleaning service' }
   ];
   
   const grid = document.getElementById('galleryGrid');
   if (!grid) return;
   
   grid.innerHTML = '';
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     const skeleton = document.createElement('div');
     skeleton.className = 'skeleton-img';
     grid.appendChild(skeleton);
@@ -300,8 +302,8 @@ function initGallery() {
       img.src = image.src;
       img.alt = image.alt;
       img.loading = 'lazy';
-      img.width = 400;
-      img.height = 200;
+      img.width = 600;
+      img.height = 400;
       img.style.opacity = '0';
       img.style.transition = 'opacity 0.5s ease';
       img.onload = function() { this.style.opacity = '1'; };
@@ -310,7 +312,7 @@ function initGallery() {
       grid.appendChild(button);
       button.style.opacity = '0';
       button.style.transform = 'translateY(20px)';
-      button.style.transition = 'opacity 0.5s ease ' + (index * 0.1) + 's, transform 0.5s ease ' + (index * 0.1) + 's';
+      button.style.transition = 'opacity 0.5s ease ' + (index * 0.08) + 's, transform 0.5s ease ' + (index * 0.08) + 's';
       requestAnimationFrame(function() {
         button.style.opacity = '1';
         button.style.transform = 'translateY(0)';
